@@ -1,0 +1,36 @@
+{
+  "oscal-version": "1.0.0",
+  "system-security-plan": {
+    "metadata": {
+      "title": "Test SSP",
+      "version": "1.0",
+      "last-modified": "2023-01-01T00:00:00Z"
+    },
+    "system-characteristics": {
+      "system-name": "Test System",
+      "system-id": "test-system-id"
+    },
+    "control-implementation": {
+      "implemented-requirements": [
+        {
+          "control-id": "AC-1",
+          "statements": [
+            {
+              "statement-id": "AC-1.1",
+              "description": "Test statement"
+            }
+          ]
+        },
+        {
+          "control-id": "AU-2",
+          "statements": [
+            {
+              "statement-id": "AU-2.1",
+              "description": "Test statement for audit"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "version": "0.1.0",
+    "description": "FedRAMP Moderate to DoD IL4 Control Mapping",
+    "source": "NIST 800-53 Rev 5, DoD Cloud Computing SRG",
+    "created": "2023-09-01",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "author": "FedRAMP IL4 Scanner Project"
+  },
+  "mappings": {
+    "AC-1": {
+      "title": "Access Control Policy and Procedures",
+      "description": "The organization develops, documents, and disseminates an access control policy and procedures.",
+      "has_il4_delta": true,
+      "required_for_il4": true,
+      "security_impact": "High",
+      "implementation_effort": "M",
+      "remediation_guidance": "Update access control policy to include DoD-specific restrictions including session lock requirements and privileged account limitations."
+    },
+    "AC-2": {
+      "title": "Account Management",
+      "description": "The organization manages information system accounts.",
+      "has_il4_delta": true,
+      "required_for_il4": true,
+      "security_impact": "High",
+      "implementation_effort": "L",
+      "remediation_guidance": "Enhance account management procedures to ensure all privileged users have separate administrative and user accounts."
+    },
+    "AC-17": {
+      "title": "Remote Access",
+      "description": "The organization establishes and documents usage restrictions, configuration requirements, and implementation guidance for remote access.",
+      "has_il4_delta": true,
+      "required_for_il4": true,
+      "security_impact": "High",
+      "implementation_effort": "M",
+      "remediation_guidance": "Implement DoD-specific requirements for remote access including multi-factor authentication and encryption."
+    },
+    "AU-2": {
+      "title": "Audit Events",
+      "description": "The organization determines events to be audited within the information system.",
+      "has_il4_delta": true,
+      "required_for_il4": true,
+      "security_impact": "Medium",
+      "implementation_effort": "M",
+      "remediation_guidance": "Expand audit events to include all DoD-required events including privileged function use."
+    },
+    "IA-2": {
+      "title": "Identification and Authentication",
+      "description": "The information system uniquely identifies and authenticates users.",
+      "has_il4_delta": true,
+      "required_for_il4": true,
+      "security_impact": "High",
+      "implementation_effort": "M",
+      "remediation_guidance": "Implement DoD-compliant multi-factor authentication for all privileged users accessing the system remotely."
+    },
+    "SC-8": {
+      "title": "Transmission Confidentiality and Integrity",
+      "description": "The information system protects the confidentiality and integrity of transmitted information.",
+      "has_il4_delta": true,
+      "required_for_il4": true,
+      "security_impact": "High",
+      "implementation_effort": "L",
+      "remediation_guidance": "Implement FIPS-validated encryption for all data in transit."
+    },
+    "RA-5": {
+      "title": "Vulnerability Scanning",
+      "description": "The organization scans for vulnerabilities in the information system and applications.",
+      "has_il4_delta": true,
+      "required_for_il4": true,
+      "security_impact": "Medium",
+      "implementation_effort": "M",
+      "remediation_guidance": "Enhance vulnerability scanning to include monthly credentialed scans and remediation timelines aligned with DoD requirements."
+    },
+    "CM-6": {
+      "title": "Configuration Settings",
+      "description": "The organization establishes and documents configuration settings for components.",
+      "has_il4_delta": true,
+      "required_for_il4": true,
+      "security_impact": "Medium",
+      "implementation_effort": "XL",
+      "remediation_guidance": "Implement DISA STIGs as baseline for all applicable components."
+    },
+    "SI-4": {
+      "title": "Information System Monitoring",
+      "description": "The organization monitors the information system to detect attacks and indicators of potential attacks.",
+      "has_il4_delta": true,
+      "required_for_il4": true,
+      "security_impact": "High",
+      "implementation_effort": "L",
+      "remediation_guidance": "Enhance monitoring to include all DoD-specific requirements for event correlation and insider threat detection."
+    },
+    "CP-9": {
+      "title": "Information System Backup",
+      "description": "The organization conducts backups of information system documentation and system data.",
+      "has_il4_delta": false,
+      "required_for_il4": true,
+      "security_impact": "Medium",
+      "implementation_effort": "S",
+      "remediation_guidance": "No delta required if FedRAMP Moderate controls are properly implemented."
+    }
+  }
+}

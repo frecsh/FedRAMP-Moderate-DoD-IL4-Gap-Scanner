@@ -1,0 +1,68 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "fedramp-il4-scanner"
+version = "0.1.0"
+description = "A local CLI tool for analyzing FedRAMP Moderate to DoD IL4 compliance gaps"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/yourusername/fedramp-il4-scanner"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Information Technology",
+    "Topic :: Security",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,!=3.9.7,<3.12"
+typer = {extras = ["all"], version = "^0.9.0"}
+tinydb = "^4.8.0"
+pydantic = "^1.10.8"
+cryptography = "^41.0.0"  # For Fernet encryption
+rich = "^13.5.0"  # For CLI formatting
+compliance-trestle = "^2.5.0"  # IBM's OSCAL implementation with components
+loguru = "^0.7.0"  # For structured logging
+pyarrow = {version = "^13.0.0", optional = true}  # Optional for Parquet support
+streamlit = {version = "^1.26.0", optional = true}  # Optional for visualization
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+black = "^23.7.0"
+isort = "^5.12.0"
+mypy = "^1.5.0"
+bandit = "^1.7.5"  # Security-focused linter
+pre-commit = "^3.3.3"
+
+[tool.poetry.extras]
+visualization = ["streamlit"]
+storage = ["pyarrow"]
+
+[tool.poetry.scripts]
+il4-scan = "fedramp_il4_scanner.cli:app"
+
+[tool.black]
+line-length = 88
+target-version = ["py39", "py310", "py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"

@@ -6,7 +6,7 @@
 
 ### 🎯 Project Objective
 
-Build a **single‑user, entirely local CLI tool** that ingests a FedRAMP Moderate OSCAL SSP, applies an authoritative FedRAMP→IL4 control‑mapping, and emits actionable gap reports (Markdown / CSV) plus an evidence manifest—fast enough to demo in an interview, portable enough to expand later.
+Build a **single‑user, entirely local CLI tool** that ingests a FedRAMP Moderate OSCAL SSP, applies an authoritative FedRAMP→IL4 control‑mapping, and emits actionable gap reports (Markdown / CSV) plus an evidence manifest.
 
 ---
 

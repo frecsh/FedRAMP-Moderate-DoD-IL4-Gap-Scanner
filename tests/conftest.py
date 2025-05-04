@@ -29,6 +29,27 @@ def temp_dir():
 
 
 @pytest.fixture
+def temp_log_path(temp_dir):
+    """Create a temporary log file path."""
+    return os.path.join(temp_dir, "test_audit.log")
+
+
+@pytest.fixture
+def temp_db_path(temp_dir):
+    """Create a temporary database path."""
+    return os.path.join(temp_dir, "test_scanner.db")
+
+
+@pytest.fixture
+def storage(temp_db_path):
+    """Create a storage instance for testing."""
+    from fedramp_il4_scanner.storage import ScanStorage
+    # Initialize with the temp database path
+    storage = ScanStorage(db_path=temp_db_path)
+    return storage  # No need for yield or close() since ScanStorage doesn't have a close method
+
+
+@pytest.fixture
 def audit_logger():
     """Create a mock audit logger for testing."""
     from fedramp_il4_scanner.audit import AuditLogger
@@ -124,3 +145,20 @@ def sample_mapping_path():
             json.dump(minimal_mapping, f, indent=2)
     
     return str(sample_path)
+
+
+@pytest.fixture
+def analyzer(sample_mapping_path):
+    """Create a GapAnalyzer instance for testing."""
+    from fedramp_il4_scanner.analyzer import GapAnalyzer
+    # Initialize with the sample mapping path
+    analyzer = GapAnalyzer(mapping_path=sample_mapping_path)
+    return analyzer
+
+
+@pytest.fixture
+def temp_output_dir(temp_dir):
+    """Create a temporary output directory for reports."""
+    output_dir = os.path.join(temp_dir, "reports")
+    os.makedirs(output_dir, exist_ok=True)
+    return output_dir

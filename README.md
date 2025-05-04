@@ -17,7 +17,7 @@ Build a **single‑user, entirely local CLI tool** that ingests a FedRAMP Modera
 | Solution         | Local scanner parses, matches, and reports in <2 min                                |
 | Impact           | 50 %+ time reduction; traceable artifacts for ATO                                   |
 | Scope Guardrails | **No** network calls, auth systems, eMASS, or multi‑user RBAC—CLI‐first, file‑based |
-| MVP Timeline     | **6–8 weeks** on a 2015 MBP                                                         |
+
 
 ---
 
